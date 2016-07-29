@@ -1,6 +1,6 @@
 {
   "name": "json-schema-resolve-allof",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Resolves AllOf references in JSON schemas into composed models",
   "main": "index.js",
   "repository": {
