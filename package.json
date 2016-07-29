@@ -1,0 +1,24 @@
+{
+  "name": "json-schema-resolve-allof",
+  "version": "1.0.0",
+  "description": "Resolves AllOf references in JSON schemas into composed models",
+  "main": "index.js",
+  "scripts": {
+    "np":"np",
+    "test": "mocha"
+  },
+  "keywords": [
+    "jsonschema"
+  ],
+  "author": "loganvolkers",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.14.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "json-schema-ref-parser": "^3.1.2",
+    "mocha": "^2.5.3",
+    "np": "^2.7.0"
+  }
+}
