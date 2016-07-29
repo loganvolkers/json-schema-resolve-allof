@@ -3,7 +3,7 @@ var _ = require('lodash');
 module.exports = function resolveAllOf(inputSpec){
     var out; 
     
-    if(typeof inputSpec === 'object'){
+    if(inputSpec && typeof inputSpec === 'object'){
         if(inputSpec.allOf){
             var allOf = inputSpec.allOf;
             delete inputSpec.allOf;

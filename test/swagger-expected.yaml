@@ -1,0 +1,21 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: All of the APIs
+
+paths:
+  /users:
+    get:
+      responses:
+        default:
+          description:  hello world
+          schema:
+            properties:
+              firstName:
+                type: string
+              lastName:
+                type: string
+              middleName:
+                type: string
+              age:
+                type: number

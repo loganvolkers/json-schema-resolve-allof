@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "js-yaml": "^3.6.1",
     "json-schema-ref-parser": "^3.1.2",
     "mocha": "^2.5.3",
     "np": "^2.7.0"

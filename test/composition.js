@@ -9,7 +9,7 @@ function resolve(obj){
   return refParser.dereference(obj).then(spec => resolveAllOf(spec));
 }
 
-describe('swagger resolver', function () {
+describe('swagger.js resolver tests', function () {
 
   it('resolves a model with composition', function (done) {
     var spec = {
