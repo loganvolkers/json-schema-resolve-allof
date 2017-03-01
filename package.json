@@ -12,6 +12,7 @@
   },
   "scripts": {
     "np": "np",
+    "build": "tsc",
     "test": "mocha"
   },
   "keywords": [
@@ -27,6 +28,7 @@
     "js-yaml": "^3.6.1",
     "json-schema-ref-parser": "^3.1.2",
     "mocha": "^2.5.3",
-    "np": "^2.7.0"
+    "np": "^2.7.0",
+    "typescript": "^2.2.1"
   }
 }

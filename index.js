@@ -1,28 +1,28 @@
 var _ = require('lodash');
-
-module.exports = function resolveAllOf(inputSpec){
-    var out; 
-    
-    if(inputSpec && typeof inputSpec === 'object'){
-        if(inputSpec.allOf){
+module.exports = function resolveAllOf(inputSpec) {
+    var out;
+    if (inputSpec && typeof inputSpec === 'object') {
+        if (inputSpec.allOf) {
             var allOf = inputSpec.allOf;
             delete inputSpec.allOf;
-            var nested = _.mergeWith({}, ...allOf, customizer);
+            var nested = _.mergeWith.apply(_, [{}].concat(allOf, [customizer]));
             out = _.defaults(inputSpec, nested, customizer);
-        }else{
+        }
+        else {
             out = inputSpec;
         }
-        Object.keys(out).forEach((key, context) => {
+        Object.keys(out).forEach(function (key, context) {
             out[key] = resolveAllOf(out[key]);
         });
-    }else{
+    }
+    else {
         out = inputSpec;
     }
     return inputSpec;
 };
-
 function customizer(objValue, srcValue) {
-  if (_.isArray(objValue)) {
-    return _.union(objValue, srcValue);
-  }
+    if (_.isArray(objValue)) {
+        return _.union(objValue, srcValue);
+    }
 }
+//# sourceMappingURL=index.js.map
