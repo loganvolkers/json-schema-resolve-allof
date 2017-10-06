@@ -45,3 +45,17 @@ resolveAllOf({
 //  }
 // }
 ```
+
+## Command Line Interface
+
+`json-schema-resolve-allof` can also be used on the command line by piping stdin into it.
+
+For example,
+```
+echo '{"allOf": [{"type": "object"}, {"additionalProperties": false}]}' | json-schema-resolve-allof
+```
+
+will return
+```
+{"type":"object","additionalProperties":false}
+```

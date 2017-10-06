@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var resolveAllOf = require('..');
+var getStdin = require('get-stdin');
+
+getStdin().then(function(inputSpec) {
+  var parsedInputSpec = JSON.parse(inputSpec);
+  var outputSpec = resolveAllOf(parsedInputSpec);
+  console.log(JSON.stringify(outputSpec));
+});
