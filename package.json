@@ -15,7 +15,7 @@
   "scripts": {
     "np": "np",
     "build": "tsc",
-    "test": "mocha"
+    "test": "tslint index.ts && mocha"
   },
   "bin": "./bin/json-schema-resolve-allof",
   "keywords": [
