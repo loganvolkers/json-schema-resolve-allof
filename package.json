@@ -3,6 +3,8 @@
   "version": "1.2.0",
   "description": "Resolves AllOf references in JSON schemas into composed models",
   "main": "index.js",
+  "types": "index.d.ts",
+  "typings": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "http://github.com/loganvolkers/json-schema-resolve-allof.git"
