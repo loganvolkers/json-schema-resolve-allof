@@ -1,10 +1,10 @@
 import * as _ from 'lodash';
 
-interface InputSpec {
+export interface InputSpec {
     [key: string]: any;
 }
 
-module.exports = function resolveAllOf(inputSpec: InputSpec): InputSpec {
+export function resolveAllOf(inputSpec: InputSpec): InputSpec {
     if (inputSpec && typeof inputSpec === 'object') {
         if (Object.keys(inputSpec).length > 0) {
             if (inputSpec.allOf) {
@@ -19,11 +19,13 @@ module.exports = function resolveAllOf(inputSpec: InputSpec): InputSpec {
         }
     }
     return inputSpec;
-};
+}
 
-function customizer(objValue: any, srcValue: any) {
+const customizer = (objValue: any, srcValue: any) => {
     if (_.isArray(objValue)) {
         return _.union(objValue, srcValue);
     }
     return;
-}
+};
+
+module.exports = resolveAllOf;

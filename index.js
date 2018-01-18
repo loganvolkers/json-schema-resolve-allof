@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var _ = require("lodash");
-module.exports = function resolveAllOf(inputSpec) {
+function resolveAllOf(inputSpec) {
     if (inputSpec && typeof inputSpec === 'object') {
         if (Object.keys(inputSpec).length > 0) {
             if (inputSpec.allOf) {
@@ -16,11 +16,13 @@ module.exports = function resolveAllOf(inputSpec) {
         }
     }
     return inputSpec;
-};
-function customizer(objValue, srcValue) {
+}
+exports.resolveAllOf = resolveAllOf;
+var customizer = function (objValue, srcValue) {
     if (_.isArray(objValue)) {
         return _.union(objValue, srcValue);
     }
     return;
-}
+};
+module.exports = resolveAllOf;
 //# sourceMappingURL=index.js.map
