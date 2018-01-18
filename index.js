@@ -1,5 +1,4 @@
 "use strict";
-exports.__esModule = true;
 var _ = require("lodash");
 function resolveAllOf(inputSpec) {
     if (inputSpec && typeof inputSpec === 'object') {
@@ -17,7 +16,6 @@ function resolveAllOf(inputSpec) {
     }
     return inputSpec;
 }
-exports.resolveAllOf = resolveAllOf;
 var customizer = function (objValue, srcValue) {
     if (_.isArray(objValue)) {
         return _.union(objValue, srcValue);

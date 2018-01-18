@@ -1,10 +1,6 @@
 import * as _ from 'lodash';
 
-export interface InputSpec {
-    [key: string]: any;
-}
-
-export function resolveAllOf(inputSpec: InputSpec): InputSpec {
+function resolveAllOf(inputSpec: any): any {
     if (inputSpec && typeof inputSpec === 'object') {
         if (Object.keys(inputSpec).length > 0) {
             if (inputSpec.allOf) {
@@ -28,4 +24,4 @@ const customizer = (objValue: any, srcValue: any) => {
     return;
 };
 
-module.exports = resolveAllOf;
+export = resolveAllOf;
