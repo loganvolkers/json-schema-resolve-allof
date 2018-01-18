@@ -1,28 +1,27 @@
-var _ = require('lodash');
+import * as _ from 'lodash';
 
-module.exports = function resolveAllOf(inputSpec){
-    var out; 
-    
-    if(inputSpec && typeof inputSpec === 'object'){
-        if(inputSpec.allOf){
-            var allOf = inputSpec.allOf;
-            delete inputSpec.allOf;
-            var nested = _.mergeWith({}, ...allOf, customizer);
-            out = _.defaults(inputSpec, nested, customizer);
-        }else{
-            out = inputSpec;
+function resolveAllOf(inputSpec: any): any {
+    if (inputSpec && typeof inputSpec === 'object') {
+        if (Object.keys(inputSpec).length > 0) {
+            if (inputSpec.allOf) {
+                const allOf = inputSpec.allOf;
+                delete inputSpec.allOf;
+                const nested = _.mergeWith({}, ...allOf, customizer);
+                inputSpec = _.defaults(inputSpec, nested, customizer);
+            }
+            Object.keys(inputSpec).forEach((key: string) => {
+                inputSpec[key] = resolveAllOf(inputSpec[key]);
+            });
         }
-        Object.keys(out).forEach((key, context) => {
-            out[key] = resolveAllOf(out[key]);
-        });
-    }else{
-        out = inputSpec;
     }
     return inputSpec;
+}
+
+const customizer = (objValue: any, srcValue: any) => {
+    if (_.isArray(objValue)) {
+        return _.union(objValue, srcValue);
+    }
+    return;
 };
 
-function customizer(objValue, srcValue) {
-  if (_.isArray(objValue)) {
-    return _.union(objValue, srcValue);
-  }
-}
+export = resolveAllOf;
