@@ -21,5 +21,6 @@ function customizer(objValue, srcValue) {
     if (_.isArray(objValue)) {
         return _.union(objValue, srcValue);
     }
+    return;
 }
 //# sourceMappingURL=index.js.map

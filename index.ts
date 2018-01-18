@@ -25,4 +25,5 @@ function customizer(objValue: any, srcValue: any) {
     if (_.isArray(objValue)) {
         return _.union(objValue, srcValue);
     }
+    return;
 }
