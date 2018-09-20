@@ -19,3 +19,9 @@ paths:
                 type: string
               age:
                 type: number
+              idCard:
+                properties:
+                  series:
+                    type: string
+                  number:
+                    type: number

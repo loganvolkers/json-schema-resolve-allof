@@ -8,7 +8,10 @@ module.exports = function resolveAllOf(inputSpec){
             var allOf = inputSpec.allOf;
             delete inputSpec.allOf;
             var nested = _.mergeWith({}, ...allOf, customizer);
-            out = _.defaults(inputSpec, nested, customizer);
+            out = _.defaultsDeep(inputSpec, nested, customizer);
+            if (out.allOf) {
+                out = resolveAllOf(out)
+            }
         }else{
             out = inputSpec;
         }
