@@ -22,3 +22,14 @@ paths:
               - properties:
                   age:
                     type: number
+              - allOf:
+                  - properties:
+                      idCard:
+                        allOf:
+                          - properties:
+                              series:
+                                type: string
+                          - properties:
+                              number:
+                                type: number
+                              

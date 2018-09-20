@@ -7,7 +7,10 @@ function resolveAllOf(inputSpec: any): any {
                 const allOf = inputSpec.allOf;
                 delete inputSpec.allOf;
                 const nested = _.mergeWith({}, ...allOf, customizer);
-                inputSpec = _.defaults(inputSpec, nested, customizer);
+                inputSpec = _.defaultsDeep(inputSpec, nested, customizer);
+                if (inputSpec.allOf) {
+                    inputSpec = resolveAllOf(inputSpec)
+                }
             }
             Object.keys(inputSpec).forEach((key: string) => {
                 inputSpec[key] = resolveAllOf(inputSpec[key]);
