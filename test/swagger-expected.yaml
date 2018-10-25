@@ -19,3 +19,13 @@ paths:
                 type: string
               age:
                 type: number
+              address:
+                type: object
+                required:
+                  - city
+                  - postcode
+                properties:
+                  city:
+                    type: string
+                  postcode:
+                    type: number

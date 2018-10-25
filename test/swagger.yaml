@@ -22,3 +22,23 @@ paths:
               - properties:
                   age:
                     type: number
+              - properties:
+                  address:
+                    type: object
+                    allOf:
+                      - required:
+                          - city
+                        properties:
+                          city:
+                            type: string
+                      - required:
+                          - postcode
+                        properties:
+                          postcode:
+                            type: number
+              - properties:
+                  address:
+                    type: object
+                    properties:
+                      city:
+                        type: string
