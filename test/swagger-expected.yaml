@@ -19,9 +19,13 @@ paths:
                 type: string
               age:
                 type: number
-              idCard:
+              address:
+                type: object
+                required:
+                  - city
+                  - postcode
                 properties:
-                  series:
+                  city:
                     type: string
-                  number:
+                  postcode:
                     type: number
