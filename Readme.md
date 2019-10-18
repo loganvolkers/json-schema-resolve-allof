@@ -1,6 +1,6 @@
 # Deprecated
 
-Try (json-schema-merge-allof)[https://www.npmjs.com/package/json-schema-merge-allof] instead
+Try [json-schema-merge-allof](https://www.npmjs.com/package/json-schema-merge-allof) instead
 
 # JSON Schema Resolve Allof
 
