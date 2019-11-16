@@ -1,7 +1,13 @@
-# Deprecated
+# DEPRECATED
 
-Try [json-schema-merge-allof](https://www.npmjs.com/package/json-schema-merge-allof) instead
+Try [json-schema-merge-allof](https://www.npmjs.com/package/json-schema-merge-allof) instead. It provides similar functionality to this libary, but does a merge that is semantic.
 
+I deprecated this library because it contains bugs about how allOfs get merged in non-compliant ways. The alternative libary ([json-schema-merge-allof](https://www.npmjs.com/package/json-schema-merge-allof)) is much more thorough about producing compliant schemas after merge.
+
+
+<details>
+<summary>old docs</summary>
+  
 # JSON Schema Resolve Allof
 
 Some simple code to resolve the `allof` references in [JSON Schema](http://json-schema.org/)
@@ -63,3 +69,4 @@ will return
 ```
 {"type":"object","additionalProperties":false}
 ```
+</details>
